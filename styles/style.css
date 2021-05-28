@@ -54,11 +54,16 @@ button:hover {
 }
 
 .wrapper {
-    width: 800px;
-    height: 400px;
+    width: 650px;
+    max-width: 800px;
+    min-width: 250px;
+    min-height: 400px;
+    height:400px;
+    max-height:600px;
     background-color: rgba(0, 0, 0, .8);
     border: 2px solid white;
     border-radius: 25px;
+    overflow: hidden;
 }
 
 .top {
@@ -80,16 +85,20 @@ button:hover {
     font-size: 40px;
 }
 
-.headings,
-.weather-info {
+.headings{
     display: flex;
     align-items: center;
 }
 
-.headings p,
-.weather-info p {
-    width: 33.3%;
+.headings p {
+    width: 100%;
     text-align: center;
+    font-weight: bold;
+}
+.weather, .temp, .humidity {
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding-left: 6px;
 }
 
 .headings {
@@ -99,12 +108,6 @@ button:hover {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
-
-.weather-info {
-    height: 65%;
-    font-size: 26px;
-}
-
 .photo {
     width: 140px;
     height: 140px;
@@ -114,4 +117,52 @@ button:hover {
     margin-top: 10px;
     font-size: 14px;
     color: tomato;
+}
+
+@media (max-width: 839px) {
+  .headings {
+      height:60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+}
+@media (max-width: 627px) {
+    .wrapper {
+        height:500px;
+    }
+    .photo {
+        padding-top: 10px;
+    }
+    .city {
+        margin-top:20px;
+    }
+    .main-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .headings {
+        margin-top:50px;
+    }
+}
+@media (max-width: 414px) {
+    h1 {
+        font-size:1.5rem;
+    }
+    .city {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top:40px;
+    }
+    .city-name {
+        font-size:1.5rem;
+    }
+    button {
+        margin-top: 10px;
+    }
 }
